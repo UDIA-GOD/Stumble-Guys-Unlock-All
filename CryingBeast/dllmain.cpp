@@ -1,4 +1,4 @@
-﻿//It's my first ever cheat, so dont judge. Yall can drop some suggestions tho <3
+//Dont sell this lmfao
 
 #include <Windows.h>
 #include "pch.h"

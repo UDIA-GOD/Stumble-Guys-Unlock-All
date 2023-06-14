@@ -1,4 +1,4 @@
-﻿#include <Windows.h>
+#include <Windows.h>
 #include <MinHook.h>
 #include <cstdio>
 
@@ -8,11 +8,11 @@ HMODULE g_hModule = NULL;
 int ConsoleState = 0;
 
 //offsets
-uintptr_t HasSkin = 0x5FA9A0;
-uintptr_t HasEmote = 0x5FA800;
-uintptr_t HasAnim = 0x5FA6D0;
-uintptr_t HasVar = 0x5FAA40;
-uintptr_t HasFP = 0x5FA910;
+uintptr_t HasSkin = 0x527320;
+uintptr_t HasEmote = 0x527180;
+uintptr_t HasAnim = 0x527050;
+uintptr_t HasVar = 0x5273c0;
+uintptr_t HasFP = 0x527290;
 //too lazy to add it to the file :P
 
 void OpenConsole() {
@@ -21,7 +21,7 @@ void OpenConsole() {
         AllocConsole();
         FILE* f;
         freopen_s(&f, "CONOUT$", "w", stdout);
-        printf("StumbleUnlocker for 0.49.1 :P\n");
+        printf("StumbleUnlocker for 0.50.1 :P\n");
     }
 }
 
@@ -41,6 +41,12 @@ void init() {
 void(__fastcall* HasSkin_o)(DWORD*, const char*, DWORD*);
 bool __stdcall HasSkin_hook(DWORD* __this, float skinID, DWORD* method) {
     printf("Skin unlocked!\n");
+    return true;
+}
+
+void(__fastcall* HasVariant_o)(DWORD*, const char*, const char*, INT32, DWORD*);
+bool __stdcall HasVariant_hook(DWORD* __this, float skinID, const char* variantName, INT32 variantID, DWORD* method) {
+    printf("Variant unlocked!\n");
     return true;
 }
 
@@ -66,10 +72,12 @@ void main() {
     init();
     MessageBox(NULL, "Welcome to StumbleUnlocker", "StumbleUnlocker", MB_OK | MB_ICONMASK);
     MH_CreateHook(reinterpret_cast<LPVOID*>(GameAssembly + HasSkin), &HasSkin_hook, (LPVOID*)&HasSkin_o);
+    MH_CreateHook(reinterpret_cast<LPVOID*>(GameAssembly + HasVar), &HasVariant_hook, (LPVOID*)&HasVariant_o);
     MH_CreateHook(reinterpret_cast<LPVOID*>(GameAssembly + HasEmote), &HasEmote_hook, (LPVOID*)&HasEmote_o);
     MH_CreateHook(reinterpret_cast<LPVOID*>(GameAssembly + HasAnim), &HasAnim_hook, (LPVOID*)&HasAnim_o);
     MH_CreateHook(reinterpret_cast<LPVOID*>(GameAssembly + HasFP), &HasFP_hook, (LPVOID*)&HasFP_o);
     MH_EnableHook(reinterpret_cast<LPVOID*>(GameAssembly + HasSkin));
+    MH_EnableHook(reinterpret_cast<LPVOID*>(GameAssembly + HasVar));
     MH_EnableHook(reinterpret_cast<LPVOID*>(GameAssembly + HasEmote));
     MH_EnableHook(reinterpret_cast<LPVOID*>(GameAssembly + HasAnim));
     MH_EnableHook(reinterpret_cast<LPVOID*>(GameAssembly + HasFP));
@@ -87,4 +95,3 @@ BOOL APIENTRY DllMain(HMODULE hModule, DWORD ul_reason_for_call, LPVOID lpReserv
     }
     return TRUE;
 }
-

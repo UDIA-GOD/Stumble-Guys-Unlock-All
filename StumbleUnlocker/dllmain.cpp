@@ -21,7 +21,7 @@ void OpenConsole() {
         AllocConsole();
         FILE* f;
         freopen_s(&f, "CONOUT$", "w", stdout);
-        printf("StumbleUnlocker for 0.50.1 :P\n");
+        printf("StumbleUnlocker for 0.50.2 :P\n");
     }
 }
 

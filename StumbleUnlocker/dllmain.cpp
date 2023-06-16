@@ -8,11 +8,11 @@ HMODULE g_hModule = NULL;
 int ConsoleState = 0;
 
 //offsets
-uintptr_t HasSkin = 0x527320;
-uintptr_t HasEmote = 0x527180;
-uintptr_t HasAnim = 0x527050;
-uintptr_t HasVar = 0x5273c0;
-uintptr_t HasFP = 0x527290;
+uintptr_t HasSkin = 0x681d90;
+uintptr_t HasEmote = 0x681bf0;
+uintptr_t HasAnim = 0x681ac0;
+uintptr_t HasVar = 0x681e30;
+uintptr_t HasFP = 0x681d00;
 //too lazy to add it to the file :P
 
 void OpenConsole() {
@@ -21,7 +21,7 @@ void OpenConsole() {
         AllocConsole();
         FILE* f;
         freopen_s(&f, "CONOUT$", "w", stdout);
-        printf("StumbleUnlocker for 0.50.2 :P\n");
+        printf("StumbleUnlocker for 0.50.3-0 stage :P\n");
     }
 }
 

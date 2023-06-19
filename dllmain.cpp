@@ -1,4 +1,4 @@
-﻿#include "includes.h"
+#include "includes.h"
 
 uintptr_t base = (uintptr_t)GetModuleHandle(NULL);
 uintptr_t GameAssembly = (uintptr_t)GetModuleHandle("GameAssembly.dll");
@@ -43,6 +43,7 @@ void main() {
         ShellExecute(NULL, "open", "https://github.com/UDIA-GOD/Stumble-Guys-Unlock-All/issues/new/?title=Minhook%20Initialize%20error%20(Could%20Not%20Hook),%20Error%20code:%20MHIErr", NULL, NULL, SW_SHOWNORMAL);
         exit(1);
     }
+    MBox("Initializing...\nNote: If you paid for this, You've got scammed.\nSource code: https://github.com/UDIA-GOD/Stumble-Guys-Unlock-All", MB_OK);
     Updater();
     Unlock();
 }

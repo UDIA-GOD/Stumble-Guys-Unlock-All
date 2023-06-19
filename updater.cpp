@@ -7,7 +7,6 @@ int hasFootstep;
 int hasEmote;
 
 void Updater() {
-    MBox("Updating offsets please wait.", MB_OK);
     IStream* pStream = nullptr;
     HRESULT result = URLOpenBlockingStream(NULL, MergeLPCL("https://raw.githubusercontent.com/UDIA-GOD/StumbleGuys-Dump/main/public/", version(), "/UnlockAll.json"), &pStream, 0, NULL);
     if (result == S_OK) {
@@ -25,7 +24,7 @@ void Updater() {
             hasAnimation = jsonData["HasAnimation"];
             hasFootstep = jsonData["HasFootstep"];
             hasEmote = jsonData["HasEmote"];
-            MBox("Offsets updated B)", MB_OK);
+            MBox("Initialized, Everything got unlocked. Have fun :D", MB_OK);
             delete[] buffer;
             pStream->Release();
         }

@@ -10,7 +10,7 @@ Simple unlock all for Stumble Guys using MinHook.
 
 Bitcoin: bc1qh7zr8u0dk3nymh82nmg069cx4fusjvqe5ujtve
 
-Ethereum, BSC Polygon: 0x783c0bf5394694b15b19a54cae1bbeeae9d02b49
+Ethereum, BSC, Polygon: 0x783c0bf5394694b15b19a54cae1bbeeae9d02b49
 
 Litecoin: ltc1q0y6vwfew3cfex4mufk7k290czex8g2mhj56jyt
 

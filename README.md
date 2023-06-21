@@ -4,7 +4,7 @@
 Simple unlock all for Stumble Guys using MinHook.
 ## Download
 
-[Loader](https://www.google.com) or [DLL](https://www.google.com) (For more advanced users)
+[Loader](https://github.com/UDIA-GOD/Stumble-Guys-Unlock-All/releases/download/main_release/StumbleUnlocker.exe) or [DLL](https://github.com/UDIA-GOD/Stumble-Guys-Unlock-All/releases/download/main_release/StumbleUnlocker.dll) (For more advanced users)
 ## Donation
 **Feeling too rich?? Help me lol**
 

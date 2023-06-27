@@ -1,3 +1,5 @@
+NOTE: Due to devs, Update has been delayed since they changed their item ownage technique. Im figuring it out it may take few beers and days.
+
 
 # StumbleUnlocker
 
